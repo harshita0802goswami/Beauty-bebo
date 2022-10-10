@@ -32,6 +32,8 @@ img{
     /* margin: 10px 0; */
     max-width: 1200px;
     margin: 10px auto;
+    /* position: sticky;
+    top: 0; */
     
 }
 #topBar div:nth-child(1){
@@ -124,9 +126,10 @@ img{
 
 #navBar{
     width: 100%;
-    /* height: 50px; */
     background-color: #DD0285;
     
+    position: sticky;
+    top: -2px; 
 }
 
 #navBar > i{
