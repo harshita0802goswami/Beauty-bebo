@@ -110,6 +110,7 @@ img{
 #topBar div:nth-child(3) > span:hover div{
     visibility: visible;
     opacity: 1;
+    z-index: 1000;
 }
 #topBar div:nth-child(3) > span > div > a{
     text-decoration: none;
@@ -129,7 +130,8 @@ img{
     background-color: #DD0285;
     
     position: sticky;
-    top: -2px; 
+    top: -2px;
+    
 }
 
 #navBar > i{
