@@ -86,6 +86,10 @@ img{
 #topBar div:nth-child(3) > span > i{
     padding: 10px;
 }
+#topBar div:nth-child(3) > i ~ div{
+    /* border: 1px solid  red; */
+    display: none;
+}
 #topBar div:nth-child(3) > span{
     position: relative;
 }
@@ -124,13 +128,21 @@ img{
     background-color: #DD0285;
     
 }
+
+#navBar > i{
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    display: none;
+}
 .nav{
-    width: 1180px;
+    max-width: 1180px;
     margin: auto;
     /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
 }
 .nav ul{
     position: relative;
@@ -139,7 +151,7 @@ img{
 .nav ul li{
     display: inline-block;
     padding: 16px 13px;
-    font-size: 14px;
+    font-size: 12px;
     color: white;
     font-weight: bold;
     /* position: relative; */
@@ -155,7 +167,15 @@ img{
     font-weight: bold;
     cursor: pointer;
 }
-
+.btn2{
+    padding: 16px 45px;
+    border: none;
+    background-color: #C60277;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+}
 
 .navData{
     position: absolute;
@@ -193,6 +213,65 @@ img{
     color: rgb(55, 54, 54);
     padding-bottom: 10px;
     display: inline-block;
+}
+
+
+
+
+
+@media only screen and (max-width: 1200px) {
+    #topBar div:nth-child(2) > p i{
+        display: none;
+    }
+    #topBar div:nth-child(3) > i:hover  span > div{
+        visibility: visible;
+        opacity: 1;
+        position: relative;
+    }
+    section > #topBar{
+        width: 90%;
+        margin: auto;
+    }
+    .nav{
+        width: 90%;
+        margin: auto;
+    }
+  }
+@media only screen and (max-width: 900px) {
+    #topBar div:nth-child(2) > p{
+        display: none;
+    }
+    #topBar div:nth-child(3) > span{
+        display: none;
+    }
+    .nav{
+        display: none;
+    }
+    #navBar{
+        display: flex;
+        justify-content: space-between;
+    }
+    #navBar > i{
+        display: block;
+    }
+    .nav ul li{
+        font-size: 12px;
+    }
+    .btn2{
+        display: block;
+        align-items: right;
+    }
+    
+  }
+
+
+@media only screen and (max-width: 900px) {
+    #topBar div:nth-child(2){
+        display: none;
+    }
+    #topBar div:nth-child(3) > i{
+        border: none;
+    }
 }
 
 
