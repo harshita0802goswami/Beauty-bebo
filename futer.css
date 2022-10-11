@@ -68,17 +68,20 @@ div > ul > li > i{
     padding-right: 7px;
 }
 #futer > div .fBottom {
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 30% 60%;
     justify-content: space-between;
     padding-top: 10px;
     border-top: 1px solid #fff;
     margin: 0;
+    align-items: center;
     /* border: 1px solid red; */
 }
 #futer > div .fBottom > div:last-child {
     display: flex;
     justify-content: right ;
     align-items: center;
+    width: 100%;
+   
 }
 
 #futer > div .fBottom h3{
@@ -86,7 +89,9 @@ div > ul > li > i{
     margin-right: 30px;
 }
 #futer > div .fBottom  input{
-    padding: 15px 60px;
+    padding: 10px 0 10px 10px;
+    width: 50%;
+    margin: 0;
 }
 #futer > div .fBottom button{
     padding: 15px 20px;
