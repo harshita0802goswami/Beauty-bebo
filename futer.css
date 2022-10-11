@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+#futer{
+    background-color: #232323;
+    color: rgb(184, 164, 179);
+}
+#futer > div{
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+    
+}
+#futer > div > div{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 20px;
+}
+#futer > div > div > div{
+   /* border: 1px solid red; */
+
+}
+#futer div > h4{
+    color: white;
+    padding-bottom: 15px;
+    position: relative;
+    margin-bottom: 15px;
+}
+#futer div > h4:before {
+    content: '-------';
+    position: absolute;
+    letter-spacing: 4px;
+    font-weight: normal;
+    left: 0;
+    right: auto;
+    top: auto;
+    bottom: -5px;
+    color: #DD0285;
+}
+#futer div > p:nth-child(2){
+    margin-bottom: 15px;
+}
+#futer div > p{
+    padding: 5px 0;
+}
+#futer div > span{
+    margin: 15px 0;
+    display: inline-block;
+}
+.icon{
+    margin: 20px 0 ;
+}
+.icon > a{
+   padding: 10px 12px;
+   background-color: #DD0285;
+   color: #fff;
+   border-radius: 50% 50% 50% 50%;
+   margin: 0 15px 0 0 ;
+}
+div > ul > li{
+    list-style: none;
+    padding-bottom: 13px;
+    cursor: pointer;
+    font-size: 15px;
+}
+div > ul > li:hover{
+    color: #DD0285;
+}
+div > ul > li > i{
+    font-size: 8px;
+    padding-right: 7px;
+}
+#futer > div .fBottom {
+    grid-template-columns: 40% 60%;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #fff;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+#futer > div .fBottom > div:last-child {
+    display: flex;
+    justify-content: right ;
+    align-items: center;
+}
+
+#futer > div .fBottom h3{
+    color: #fff;
+    margin-right: 30px;
+}
+#futer > div .fBottom  input{
+    padding: 15px 60px;
+}
+#futer > div .fBottom button{
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #DD0285;
+    border: none;
+}
+.copyRight{
+    background-color: #0C0C0C;
+    text-align: center;
+    padding: 10px 0;
+}
+.copyRight >  h5{
+    color: rgb(183, 166, 166);
+    font-size: 14px;
+}
+
+
+
+
+
