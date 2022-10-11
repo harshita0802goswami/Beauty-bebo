@@ -4,7 +4,10 @@
     margin-left: 25px;
     align-items: center;
     margin-bottom: 50px;
-    /* border: 1px solid black; */
+    position: relative;
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
 }
 
 #lineTop1 {
@@ -12,7 +15,7 @@
     height: 8px;
     background-color: #dd0285;
     border-radius: 6px;
-
+    position: relative;
 }
 
 #lineTop2 {

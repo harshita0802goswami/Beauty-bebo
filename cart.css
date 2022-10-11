@@ -17,10 +17,10 @@
     margin-right:10% ;
     margin-left: 2%; ;
   }
-  /* #innerSummaryPrice{
-    width: 80%;
-    margin: auto;
-  } */
+  #shoppingCartH3{
+
+    margin-left: 9%;
+  }
   .subtotal{
     display: flex;
     justify-content: space-between;
@@ -84,4 +84,7 @@
     cursor: pointer;
     border: none;
     outline: none;
+  }
+  #uparrow:active{
+    background-color:  #dd0285;
   }
