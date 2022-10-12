@@ -126,12 +126,13 @@
 #tabSec{
     max-width: 1200px;
     margin: 15px auto;
+    height: 530px;
 }
 #tabSec ul{
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-
+    position: relative;
 }
 #tabSec ul li{
     /* border: 1px solid red; */
@@ -139,7 +140,95 @@
     padding: 10px;
     color: #ca63a1;
     box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 2px 0px;
+
 }
+
+
+#tabSec > ul > li #tabData{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    color: #666;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+#tabSec ul li:hover #tabData{
+    opacity: 1;
+    visibility: visible;
+ }
+#tabSec ul li:first-child #tabData{
+    opacity: 1;
+    visibility: visible;
+ }
+ #tabSec ul li:hover #tabSec ul li:first-child #tabData{
+    opacity: 0;
+    visibility: hidden;
+ }
+
+#tabSec > ul > li #tabData div{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    padding: 10px;
+    text-align: center;
+}
+#tabSec > ul > li #tabData div{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    padding: 10px;
+
+}
+#tabSec > ul > li #tabData > div > span{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    margin-bottom: -10px;
+}
+#tabSec > ul > li #tabData > div > span i{
+    font-size: 10px;
+    color: #d3b7ca;
+}
+#tabSec > ul > li #tabData > div > span p{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+}
+#tabSec > ul > li #tabData  button{
+    width: 50%;
+    font-size: 14px;
+    padding: 3px ;
+    border-radius: 3px;
+    border: none;
+    background-color: #DD0285;
+    color: white;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#tabSec > ul > li #tabData  button .bag{
+    display: inline-block;
+    font-size: 15px;
+    padding: 3px 10px;
+    color: white;
+}
+#tabSec > ul > li #tabData span .save{
+    display: inline-block;
+    width: 30px;
+    height: 23px;
+    margin: 0px 5px;
+    background-color: #DD0285;  
+    color: white;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+
+
+
 
 #tabSec ul li:hover{
     background-color: #DD0285;
