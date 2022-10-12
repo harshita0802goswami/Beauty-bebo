@@ -1,10 +1,10 @@
 #lineTop {
     display: flex;
-    margin-top: 40px;
+    margin-top: 10%;
     margin-left: 25px;
     align-items: center;
     margin-bottom: 50px;
-    position: relative;
+    /* position: relative; */
     width: 80%;
     margin: auto;
     border: 1px solid black;
@@ -15,7 +15,7 @@
     height: 8px;
     background-color: #dd0285;
     border-radius: 6px;
-    position: relative;
+    /* position: relative; */
 }
 
 #lineTop2 {
