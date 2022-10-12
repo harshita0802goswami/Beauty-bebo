@@ -21,11 +21,10 @@
       src="https://kit.fontawesome.com/e918a69d95.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="makeup.css" />
   </head>
 
   <body>
-    <!-- Nave bar Design -->
     <section>
       <div id="topBar">
           <div>
@@ -261,50 +260,74 @@
               <span>MY CART</span>
           </button>
       </div>
- 
 
-    <!-- product section starts -->
-    <h2>Personal Care</h2>
-    <!-- Top sort options  -->
-    <div id="sort-div">
-      <select name="sort" id="sort" onchange="handleSorting()">
-        <option value="">Sort By :</option>
-        <option value="productName">Product Name</option>
-        <option value="lth">Price: Low to High</option>
-        <option value="htl">Price: High to Low</option>
-      </select>
+    <div id="mainContainer">
+      <!-- sidebar section -->
+      <div id="sidebar">
+        <div id="ctg">
+          <p>CATEGORY <span>&#43;</span></p>
+          <div id="list"></div>
+        </div>
+        <div id="option">
+          <h3>SHOP BY</h3>
+          <div id="skn">
+            <p>SKIN TYPE <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="color">
+            <p>COLOR <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="prc">
+            <p>PRICE <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="brnd">
+            <p>BRAND <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="shds">
+            <p>SHADES <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="forml">
+            <p>FOMULATION <span>+</span></p>
+            <div></div>
+          </div>
+        </div>
+        <img
+          src="https://www.beautybebo.com/pub/media/free-delivery.jpg"
+          alt=""
+        />
+      </div>
 
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>></li>
-      </ul>
+      <!-- product section -->
+      <div id="product-div">
+        <h2>PERSONAL CARE</h2>
+
+        <!-- Top sort options  -->
+        <div id="sort-div">
+          <select name="sort" id="sort" onchange="handleSorting()">
+            <option value="">Sort By :</option>
+            <option value="productName">Product Name</option>
+            <option value="lth">Price: Low to High</option>
+            <option value="htl">Price: High to Low</option>
+          </select>
+
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>></li>
+          </ul>
+        </div>
+
+        <!-- product lists -->
+        <div id="container"></div>
+      </div>
     </div>
-
-    <div id="container"></div>
-    <!-- bottom sort section -->
-    <div id="sort-div">
-      <select name="sort" id="sort">
-        <option value="position">Sort: Position</option>
-        <option value="productName">Product Name</option>
-        <option value="newArrival">New Arrivals</option>
-        <option value="lth">Price: Low to high</option>
-        <option value="htl">Price: High to low</option>
-      </select>
-
-      <ul>
-        <li id="one">1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>></li>
-      </ul>
-    </div>
-    <!-- </div> -->
   </body>
 </html>
 <script>
@@ -695,13 +718,14 @@
     document.querySelector("#container").innerText = "";
     personalCareArr.map(function (elem) {
       var box = document.createElement("div");
+      box.setAttribute("id", "box");
 
       var img = document.createElement("img");
       img.setAttribute("src", elem.imgurl);
 
       var sale = document.createElement("span");
       sale.innerText = "Sale";
-      sale.setAttribute("id", "logo");
+      sale.setAttribute("id", "sale");
 
       var namebox = document.createElement("div");
       namebox.setAttribute("id", "namebox");
@@ -714,12 +738,15 @@
       smallbox.setAttribute("id", "pricebox");
 
       var strike = document.createElement("strike");
+      strike.setAttribute("id", "strike");
       strike.innerText = elem.strikedoffprice;
 
       var price = document.createElement("p");
-      price.innerText = '₹' + elem.price;
+      price.setAttribute("id", "price");
+      price.innerText = "₹" + elem.price;
 
       var disc = document.createElement("p");
+      disc.setAttribute("id", "disc");
       disc.innerText = elem.disc;
 
       var smallbox2 = document.createElement("div");
