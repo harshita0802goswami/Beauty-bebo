@@ -89,12 +89,12 @@ div > ul > li > i{
     margin-right: 30px;
 }
 #futer > div .fBottom  input{
-    padding: 10px 0 10px 10px;
+    padding: 11px 0 11px 10px;
     width: 50%;
     margin: 0;
 }
 #futer > div .fBottom button{
-    padding: 15px 20px;
+    padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
     color: #fff;
