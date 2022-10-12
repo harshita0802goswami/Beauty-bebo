@@ -28,7 +28,7 @@
     <section>
       <div id="topBar">
           <div>
-              <a href=""><img src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png" alt=""></a>
+              <a href="../index.html"><img src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png" alt=""></a>
           </div>
           <div>
               
@@ -55,7 +55,8 @@
           <i class="fa-solid fa-bars"></i>
           <div class="nav">
               <ul>
-                  <li>MAKEUP <i class="fa-solid fa-chevron-down"></i>
+                 <li><a href="makeup.html">MAKEUP <i class="fa-solid fa-chevron-down"></i></a>
+                    
                       <div class="navData">
                           <div>
                              <a href="">FACE</a>
@@ -303,7 +304,7 @@
 
       <!-- product section -->
       <div id="product-div">
-        <h2>Ayuverda</h2>
+        <h2>MAKEUP</h2>
 
         <!-- Top sort options  -->
         <div id="sort-div">
@@ -326,418 +327,446 @@
 
         <!-- product lists -->
         <div id="container"></div>
-         
+
+        <!-- bottom sort section -->
+        <div id="sort-div">
+          <select name="sort" id="sort" onchange="handleSorting()">
+            <option value="">Sort By :</option>
+            <option value="productName">Product Name</option>
+            <option value="lth">Price: Low to High</option>
+            <option value="htl">Price: High to Low</option>
+          </select>
+
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>></li>
+          </ul>
+        </div>
       </div>
     </div>
-    
-
   </body>
 </html>
 <script>
-  var fragranceArr = [
+  var makeupArr = [
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/s/8/s8.jpg",
-      name: "Calvin Klein Eternity For Men Eau De Parfum",
-      price: "3,468.00",
-      strikedoffprice: "₹3,650.00",
-      disc: "5% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/7/277cf77missc00000081_1.jpg",
+      name: "Miss Claire Eyelash Glue - Clear Tone",
+      price: "322.00",
+      strikedoffprice: "₹350.00",
+      disc: "8% off",
       rate: 322,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo21.jpg",
-      name: "Fogg Bleu Series Island Fragrance Body Spray",
-      price: "255.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/b/5b990e16902395773146_3.jpg",
+      name: "Maybelline New York Fit Me Primer - Dewy+Smooth",
+      price: "475.00",
+      strikedoffprice: "₹499.00",
+      disc: "5% off",
       rate: 475,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo20.jpg",
-      name: "Fogg Force Fragrance Body Spray",
-      price: "230.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/6/9/6902395735908_0.jpg",
+      name: "L'Oreal Paris Infallible Full Wear Concealer",
+      price: "₹735.00",
+      strikedoffprice: "₹799.00",
+      disc: "8% off",
       rate: 735,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo19.jpg",
-      name: "Fogg Punch Fragrance Body Spray",
-      price: "230.00 ",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/1/51c18ra5qzs._sl1500_.jpg",
+      name: "Faces Canada Ultime Pro Matte Play Eyeliner",
+      price: "604.00 ",
+      strikedoffprice: "₹649.00",
+      disc: "7% off",
       rate: 604,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo18.jpg",
-      name: "Fogg Bleu Series Mountain Fragrance Body Spray",
-      price: "255.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/c/bcf6c6c8904052434726__2_.jpg",
+      name: "Colorbar Intensify Liquid Gel Eyeliner - Arabian Nights",
+      price: "699.00",
+      strikedoffprice: "₹750.00",
+      disc: "8% off",
       rate: 699,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo17.jpg",
-      name: "Fogg Rush Fragrance Body Spray",
-      price: "230.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/6/1/618a4rcg7il._sl1500_.jpg",
+      name: "Nyx Professional Makeup Pore Filler",
+      price: "1,378.00",
+      strikedoffprice: "₹1,450.00",
+      disc: "5% off",
       rate: 1378,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo16.jpg",
-      name: "Fogg Bleu Skies Fragrance Body Spray ",
-      price: "275.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/a/r/artboard_1_5.jpg",
+      name: "Mamaearth Naturally Matte Lip Serum - Matte Liquid Lipstick With Vitamin C & E",
+      price: "539.00",
+      strikedoffprice: "₹599.00",
+      disc: "10% Off",
       rate: 539,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo15.jpg",
-      name: "Fogg Scent Intensio Men Fragrance Body Spray",
-      price: "539.00",
-      strikedoffprice: "599.00",
-      disc: "10% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8904052409748-2.jpg",
+      name: "Colorbar Infinite 24hrs Eyeliner",
+      price: "651.00 ",
+      strikedoffprice: "₹700.00",
+      disc: "7% Off",
       rate: 651,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo13.jpg",
-      name: "Fogg Master Cedar Body Spray",
-      price: "275.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/_/3_125_1.jpg",
+      name: "Nyx Professional Makeup Butter Gloss - Angel Food Cake",
+      price: "495.00",
+      strikedoffprice: "₹550.00",
+      disc: "10% off",
       rate: 495,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo12.jpg",
-      name: "Fogg Black Fresh Aromatic Fragrance Body Spray ",
-      price: "250.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/a/7/a74edf0nypac00001337m1.jpg",
+      name: "PAC Makeup Blender Foundation",
+      price: "675.00",
       strikedoffprice: "",
       disc: "",
       rate: 675,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo10.jpg",
-      name: "Fogg Master Agar Body Spray",
-      price: "275.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/7/57180618906087776895_rose__6_.jpg",
+      name: "Mamaearth Rose Tinted 100% Natural Lip Balm",
+      price: "299.00",
       strikedoffprice: "",
       disc: "",
       rate: 299,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo9.jpg",
-      name: "Fogg Black Fresh Fougere Body Spray Deodorant For Men",
-      price: "250.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/f/2ff90618906087776918__6_.jpg",
+      name: "Mamaearth Ubtan Tinted 100% Natural Lip Balm For Lightening Dark Lips",
+      price: "299.00",
       strikedoffprice: "",
       disc: "",
       rate: 299,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo8.jpg",
-      name: "Fogg Scent Xpressio Men Fragrance Body Spray",
-      price: "539.00",
-      strikedoffprice: "₹599.00",
-      disc: "10% off",
-      rate: 539,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo7.jpg",
-      name: "Fogg Dynamic Fragrance Body Spray",
-      price: "250.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/a/0/a0c40618906087776895_vitc__6_.jpg",
+      name: "Mamaearth Vitamin C Tinted 100% Natural Lip Balm For Lip Lightening",
+      price: "299.00",
       strikedoffprice: "",
       disc: "",
+      rate: 299,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/_/3_126.jpg",
+      name: "Faces Canada UltimePro Twist Eye Kajal Liner",
+      price: "539.00",
+      strikedoffprice: "₹599.00",
+      disc: "10% Off",
       rate: 539,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo6.jpg",
-      name: "Fogg Scent Xtremo Men Fragrance Body Sprayr",
-      price: "539.00",
-      strikedoffprice: "₹599.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/_/5_91.jpg",
+      name: "Miss Claire Mineral Blusher Kit - 3716-4-04",
+      price: "338.00",
+      strikedoffprice: "₹375.00",
       disc: "10% off",
       rate: 338,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo5.jpg",
-      name: "Fogg Black Fresh Spicy Body Spray Deodorant For Men",
-      price: "234.00",
-      strikedoffprice: "₹275.00",
-      disc: "15% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/_/3_125_1.jpg",
+      name: "NYX Professional Makeup The Marshmellow Primer",
+      price: "1,425.00",
+      strikedoffprice: "₹1,500.00",
+      disc: "5% off",
       rate: 1425,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo3.jpg",
-      name: "Fogg Master Oak Body Spray",
-      price: "275.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/_/1_210_13.jpg",
+      name: "Blue Heaven 12-In-1 Bling Eyeshadow Palette - Cocktail Fever - (Pack Of 2)",
+      price: "450.00",
+      strikedoffprice: "₹500.00",
+      disc: "10% off",
       rate: 450,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo1.jpg",
-      name: "Fogg Master Pine Body Spray",
-      price: "275.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/1/21_12_6.jpg",
+      name: "Faces Canada Ultime Pro Eye Shadow Palette - Nude 01",
+      price: "920.00",
+      strikedoffprice: "₹999.00",
+      disc: "8% off",
       rate: 920,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/r/r/rr.jpg",
-      name: "Fogg Scent Beautiful Secret Women Fragrance Body Spray",
-      price: "539.00",
-      strikedoffprice: "₹599.00",
-      disc: "10% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/0/20_12_5.jpg",
+      name: "NYX Professional Makeup Epic Ink Liner - Black",
+      price: "759.00",
+      strikedoffprice: "₹825.00",
+      disc: "8% off",
       rate: 759,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/e/5/e55.jpg",
-      name: "Engage Yin Eau De Parfum For Men",
-      price: "459.00",
-      strikedoffprice: "₹499.00",
-      disc: "8% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/8/58.jpg",
+      name: "PAC Transparent Mascara",
+      price: "325.00",
+      strikedoffprice: "",
+      disc: "",
       rate: 325,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/e/5/e54.jpg",
-      name: "Engage Sport Cool Deodorant For Women, Citrus & Spicy, Skin Friendly",
-      price: "195.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/6/56_2.jpg",
+      name: "Colorbar Lash Illusion Mascara Lengthening Lash & Volumising Mascara",
+      price: "446.00",
+      strikedoffprice: "₹495.00",
+      disc: "10% off",
       rate: 446,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/e/5/e52.jpg",
-      name: "Engage Sport Fresh Deodorant For Women",
-      price: "195.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/4/54_2.jpg",
+      name: "Faces Canada Peaches N Cream Tinted Moisturizer - Light 01",
+      price: "539.00",
+      strikedoffprice: "₹599.00",
+      disc: "10% off",
       rate: 539,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/e/5/e51.jpg",
-      name: "Engage Spell Deodorant For Women",
-      price: "210.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/4/44_2_3.jpg",
+      name: "Mamaearth Cherry Tinted 100% Natural Lip Balm With Cherry And Coconut Oil",
+      price: "299.00",
       strikedoffprice: "",
       disc: "",
       rate: 299,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/e/4/e49.jpg",
-      name: "Denver Esteem Hamilton Perfume",
-      price: "448.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/2/42_3_2.jpg",
+      name: "Mamaearth CoCo Tinted 100% Natural Lip Balm With CoCo And Vitamin E",
+      price: "299.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 299,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/9/39_2_2.jpg",
+      name: "Mamaearth Charcoal Black Long Stay Kohl With Castor Oil And Chamomile For 11-",
+      price: "449.00",
       strikedoffprice: "₹499.00",
       disc: "10% off",
-      rate: 299,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/3/d36.jpg",
-      name: "Denver Noble Hamilton Deodorant Body Spray",
-      price: "210.00",
-      strikedoffprice: "",
-      disc: "",
       rate: 449,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/3/d35.jpg",
-      name: "Denver Imperial Deodorant For Men",
-      price: "212.00",
-      strikedoffprice: "₹240.00",
-      disc: "15% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/7/37_4_2.jpg",
+      name: "Lakme Absolute Illuminating Blush Shimmer Brick - In Pink",
+      price: "689.00",
+      strikedoffprice: "₹725.00",
+      disc: "5% off",
       rate: 689,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/3/d34.jpg",
-      name: "Denver Prestige Deodorant For Men - Hamilton",
-      price: "249.00",
-      strikedoffprice: "",
-      disc: "",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/6/36_4_2.jpg",
+      name: "Faces Canada Ultime Pro HD All That Glow Highlighter",
+      price: "809.00",
+      strikedoffprice: "₹899.00",
+      disc: "10% Off",
       rate: 889,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/3/d33.jpg",
-      name: "Denver Honour Hamilton Deo",
-      price: "249.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/_/8_41_4.jpg",
+      name: "Mamaearth Rose Tinted 100% Natural Lip Balm With Rose Oil And Castor Oil",
+      price: "299.00",
       strikedoffprice: "",
       disc: "",
       rate: 299,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/3/d32.jpg",
-      name: "Denver SRK Emperor Deodorant Autograph Collection - 150ml",
-      price: "212.00",
-      strikedoffprice: "₹249.00",
-      disc: "15% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/6/_/6_87_6.jpg",
+      name: "PAC Lower Lash Mascara",
+      price: "545.00",
+      strikedoffprice: "",
+      disc: "",
       rate: 545,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/3/d31.jpg",
-      name: "Denver Sporting Club Goal Perfume - 60ml",
-      price: "257.00",
-      strikedoffprice: "₹299.00",
-      disc: "14% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/_/5_90_5.jpg",
+      name: "Faces Canada Ultime Pro A Matte Made In Heaven Ink Eyeliner",
+      price: "539.00",
+      strikedoffprice: "₹599.00",
+      disc: "10% off",
       rate: 539,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/3/d30.jpg",
-      name: "Denver Insight Eau De Perfume",
-      price: "448.00",
-      strikedoffprice: "₹499.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/_/2_174_6.jpg",
+      name: "Blue Heaven Bling Matte + Metallic Eyeshadow Palette - Subtle Romance -",
+      price: "450.00",
+      strikedoffprice: "₹500.00",
       disc: "10% off",
       rate: 450,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/2/d29.jpg",
-      name: "Denver Sporting Club Rider Deo",
-      price: "179.00",
-      strikedoffprice: "₹210.00",
-      disc: "15% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/_/5_90_3.jpg",
+      name: "Mamaearth Ubtan Tinted 100% Natural Lip Balm With Turmeric & Saffron",
+      price: "299.00",
+      strikedoffprice: "",
+      disc: "",
       rate: 299,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/2/d28.jpg",
-      name: "Denver Hamilton Caliber Perfume - 100ml",
-      price: "448.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/_/4_98_9.jpg",
+      name: "Swiss Beauty Pro 12 Exotic Color Eyeshadows - Fearless",
+      price: "449.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 449,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/_/1_210_10.jpg",
+      name: "Faces Canada Ultime Pro Brow Defining Pencil - Dark Brown 02",
+      price: "449.00",
       strikedoffprice: "₹499.00",
       disc: "10% off",
       rate: 449,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/2/d27.jpg",
-      name: "Denver Sporting Club - Victor Deo - 165ml",
-      price: "179.00",
-      strikedoffprice: "₹210.00",
-      disc: "15% off",
-      rate: 449,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/2/d26.png",
-      name: "Denver Hamilton Imperial Perfume",
-      price: "257.00",
-      strikedoffprice: "₹299.00",
-      disc: "14% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/_/1_210_8.jpg",
+      name: "Faces Canada Ultimepro Hd Deep Black One Stroke Kajal",
+      price: "643.00",
+      strikedoffprice: "₹699.00",
+      disc: "8% off",
       rate: 643,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/2/d25.jpg",
-      name: "Denver Royal Oud Deo - Hamilton",
-      price: "179.00",
-      strikedoffprice: "₹210.00",
-      disc: "15 % off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/0/10_26_6.jpg",
+      name: "Mamaearth Vitamin C Tinted 100% Natural Lip Balm With Vitamin C & Honey",
+      price: "299.00",
+      strikedoffprice: "",
+      disc: "",
       rate: 299,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/2/d24.jpg",
-      name: "Denver Hamilton Imperial Perfume - 100ml",
-      price: "448.00",
-      strikedoffprice: "₹499.00",
-      disc: "10% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/4/140_1_1.jpg",
+      name: "Swiss Beauty HD Textured Shadow Palette - 2",
+      price: "549.00",
+      strikedoffprice: "",
+      disc: "",
       rate: 549,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/2/d23.jpg",
-      name: "Denver Hamilton Deo",
-      price: "212.00",
-      strikedoffprice: "₹240.00",
-      disc: "15% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/5/1/51_1.jpg",
+      name: "Blue Heaven Intense Eyeliner Easy Sketch - Extreme Black - (Pack Of 2)",
+      price: "288.00",
+      strikedoffprice: "₹320.00",
+      disc: "10% off",
       rate: 288,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/2/d22.jpg",
-      name: "Denver Caliber Deodorant For Men - Hamilton",
-      price: "212.00",
-      strikedoffprice: "₹240.00",
-      disc: "15% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/2/229.jpg",
+      name: "Faces Canada No Transfer Matte Lipstick",
+      price: "549.00",
+      strikedoffprice: "",
+      disc: "",
       rate: 549,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/7/37_4_1.jpg",
-      name: "Denver Pride Hamilton Deo",
-      price: "212.00",
-      strikedoffprice: "₹249.00",
-      disc: "15% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/8/181.jpg",
+      name: "Faces Canada Ultime Pro HD Intense Matte Lips + Primer",
+      price: "799.00",
+      strikedoffprice: "",
+      disc: "",
       rate: 799,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/2/d20.png",
-      name: "Denver Black Code Perfume",
-      price: "212.00",
-      strikedoffprice: "₹249.00",
-      disc: "15% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/7/179.jpg",
+      name: "Faces Canada Ultime Pro Eye Shadow Palette - Glimmer 03",
+      price: "949.00",
+      strikedoffprice: "₹999.00",
+      disc: "5% off",
       rate: 949,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/7/177.jpg",
+      name: "Lakme Absolute Infinity Eye Shadow Palette - Soft Nudes",
+      price: "915.00",
+      strikedoffprice: "₹995.00",
+      disc: "8% off",
+      rate: 915,
     },
   ];
 
-  displayData(fragranceArr);
+  displayData(makeupArr);
+
+  //sorting implementation
+
   function handleSorting() {
     var selectedVal = document.getElementById("sort").value;
     console.log(selectedVal);
     //sorting by product name
     if (selectedVal === "productName") {
-      fragranceArr.sort(function (a, b) {
+      makeupArr.sort(function (a, b) {
         if (a.name > b.name) return 1;
         if (a.name < b.name) return -1;
         return 0;
       });
-      displayData(fragranceArr);
-      console.log(fragranceArr);
+      displayData(makeupArr);
+      console.log(makeupArr);
     } else if (selectedVal === "lth") {
-      fragranceArr.sort(function (a, b) {
+      makeupArr.sort(function (a, b) {
         return a.price - b.price;
       });
-      displayData(fragranceArr);
-      console.log(fragranceArr);
+      displayData(makeupArr);
+      console.log(makeupArr);
     } else if (selectedVal === "htl") {
-      fragranceArr.sort(function (a, b) {
+      makeupArr.sort(function (a, b) {
         return b.price - a.price;
       });
-      displayData(fragranceArr);
-      console.log(fragranceArr);
+      displayData(makeupArr);
+      console.log(makeupArr);
     }
   }
 
-  displayData(fragranceArr);
+  displayData(makeupArr);
   function displayData(data) {
     document.querySelector("#container").innerText = "";
-    fragranceArr.map(function (elem) {
+    makeupArr.map(function (elem) {
       var box = document.createElement("div");
       box.setAttribute("id", "box");
 
@@ -774,7 +803,7 @@
       smallbox2.setAttribute("id", "cartbox");
 
       var wish = document.createElement("button");
-      wish.innerText = "♡";
+      wish.innerText = "🤍";
       wish.setAttribute("id", "wish");
       wish.addEventListener("click", function () {
         addtowishfunc(elem);
@@ -793,5 +822,11 @@
       box.append(img, sale, namebox, smallbox, smallbox2);
       document.querySelector("#container").append(box);
     });
+  }
+
+  var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  function addtowishfunc(elem){
+    wishlist.push(elem);
+    localStorage.setItem('wishlist',JSON.stringify(wishlist));
   }
 </script>
