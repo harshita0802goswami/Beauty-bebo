@@ -127,6 +127,9 @@ img{
 #topBar div:nth-child(3) > i:hover{
     background-color: #DD0285;
 }
+#topBar div:nth-child(3) >span{
+    font-size: 14px;
+}
 
 /* Navbar css start */
 
@@ -136,7 +139,7 @@ img{
     
     position: sticky;
     top: -2px;
-    
+    z-index: 1000;
 }
 
 #navBar > i{
@@ -144,6 +147,7 @@ img{
     padding: 15px;
     font-size: 20px;
     display: none;
+    z-index: 1000;
 }
 .nav{
     max-width: 1180px;
@@ -156,6 +160,7 @@ img{
 }
 .nav ul{
     position: relative;
+    z-index: 1000;
 }
 
 .nav ul li{
@@ -164,10 +169,16 @@ img{
     font-size: 12px;
     color: white;
     font-weight: bold;
+    z-index: 1000;
     /* position: relative; */
+}
+.nav ul li i{
+    padding-left: 5px;
+    font-size: 14px;
 }
 .nav ul li:hover{
     background-color: #C60277;
+    color: white;
 }
 .nav button{
     padding: 16px 45px;
