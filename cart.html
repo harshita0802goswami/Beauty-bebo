@@ -397,35 +397,16 @@
 
 <script>
   //getting data from product page
-  var cartData=JSON.parse(localStorage.getItem("addcartArr"));//line no608fromharshitaProduct
-  console.log(cartData);
+  var cartData=JSON.parse(localStorage.getItem("cart")) || [];
+    console.log(cartData);
+if(cartData.length==0){
+    document.getElementById("cart").innerText="Cart is Empty.Add some items";
+}
+else{
+    displayCart(cartData);
+}
 
-  //calculating total price
-  var total = cartData.reduce(function (acc, elem) {
-    return sum + Number(elem.rate);
-  }, 0);
-
-  document.querySelector("#subtotalprice").innerText =
-    "₹" + "  " + total + ".00";
-
-    //--------applydiscount-----------applydisc
-    document.querySelector("#applydisc").addEventListener("click",discountFn);
-    function discountFn(){
-      console.log(total);
-      var coupn = document.querySelector("#discount_code").value;
-     
-      if (coupn == "MASAI30") {
-      var netP = total - (total * 30) / 100;
-      console.log(netP);
-      document.querySelector("#discountedprice").value = netP ;
-      alert("Congratulation You have got 30% Discount");
-    }
-    else {
-      alert("Please Enter  Valid Coupn");
-      document.querySelector("#discountedprice").value =  total;
-    }
-  }
-//maping data to tbody
+function displayCart(cartData){
 cartData.map(function(elem,i){
   var div =document.createElement("div");
   div.style.margin = "10px 12px";
@@ -460,12 +441,44 @@ cartData.map(function(elem,i){
 
     document.querySelector("tbody").append(div);
 });
+}
+  //calculating total price
+  var total = cartData.reduce(function (acc, elem) {
+    return acc + Number(elem.rate);
+  }, 0);
+
+  document.querySelector("#subtotalprice").innerText =
+    "₹" + "  " + total + ".00";
+
+    //--------applydiscount-----------applydisc
+    document.querySelector("#applydisc").addEventListener("click",discountFn);
+    function discountFn(){
+      console.log(total);
+      var coupn = document.querySelector("#discount_code").value;
+     
+      if (coupn == "MASAI30") {
+      var netP = total - (total * 30) / 100;
+      console.log(netP);
+      document.querySelector("#discountedprice").value = netP ;
+      alert("Congratulation You have got 30% Discount");
+    }
+    else {
+      alert("Please Enter  Valid Coupn");
+      document.querySelector("#discountedprice").value =  total;
+    }
+  }
+//maping data to tbody
+
+
 function removeItem(elem, index) {
     // console.log(elem, index);
     cartData.splice(index, 1);
     // console.log(cartData);
-    localStorage.setItem("addcartArr", JSON.stringify(cartData));
+    localStorage.setItem("cart", JSON.stringify(cartData));
     window.location.reload();
   }
+  // ===================
+ 
+  
 
 </script>
