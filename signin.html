@@ -155,11 +155,12 @@
 
             <label for="">Confirm Password</label><br>
             <input type="password" id="confirmpassword" /><br>
-            <a href="login.html"><button id="submit">create an account</button></a>
+            <input type="submit" value="create an account" id="submit">
+            </form>
+
 
 
             <p>if u already have an account ?<a href="login.html">LOGIN</a></p>
-        </form>
     </div>
 
 </body>
@@ -185,7 +186,14 @@
             arr.push(obj);
             localStorage.setItem("SignArr", JSON.stringify(arr));
             alert("Account Created Succesfully");
+            document.getElementById("ancer").href = "login.html"
         }
+        document.getElementById("Firstname").value="";
+         document.getElementById("Lastname").value="";
+        document.getElementById("email").value="";
+         document.getElementById("number").value="";
+         document.getElementById("password").value="";
+         document.getElementById("confirmpassword").value="";
 
     }
 </script>
