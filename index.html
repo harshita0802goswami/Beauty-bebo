@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="futer.css">
     <script src="https://kit.fontawesome.com/e918a69d95.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hotdeal.css">
 
     <title>Home Page</title>
 </head>
@@ -310,7 +311,7 @@
                     <i class="fa-solid fa-compact-disc"></i>
                 </div>
             </div>
-            <div class="showProduct">
+            <div id="showProduct">
                 
                 <!-- js part -->
         
@@ -1065,6 +1066,111 @@
 <!-- Futer section end -->
 
 </body>
+<script>
+    var arr =[ {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/6/3699c478906105612174-2.jpg",
+      name: "Wow Skin Science Caffeine Face Serum",
+      price: "515.00",
+      strikedoffprice: "₹599.00",
+      disc: "14% off",
+      rate: 475,
+    }, {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/8/88b239c8904311904281__1_.jpg",
+      name: "WOW Skin Science Himalayan Rose Conditioner",
+      price: "395.00",
+      strikedoffprice: "₹449.00",
+      disc: "12% off",
+      rate: 735,
+    }, {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/f/o/fo15.jpg",
+      name: "Fogg Scent Intensio Men Fragrance Body Spray",
+      price: "539.00",
+      strikedoffprice: "599.00",
+      disc: "10% off",
+      rate: 651,
+    }, {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be176.jpg",
+      name: "Chicco Natural Sensation Bath Shampoo",
+      price: "450.00",
+      strikedoffprice: "₹499.00",
+      disc: "10% off",
+      rate: 539,
+    },]
+    displayData(arr);
+  function displayData(data) {
+    document.getElementById("showProduct").innerText = "";
+    arr.map(function (elem) {
+      var box = document.createElement("div");
+      box.setAttribute("id", "box");
+
+      var img = document.createElement("img");
+      img.setAttribute("src", elem.imgurl);
+
+      var sale = document.createElement("span");
+      sale.innerText = "Sale";
+      sale.setAttribute("id", "sale");
+
+      var namebox = document.createElement("div");
+      namebox.setAttribute("id", "namebox");
+
+      var name = document.createElement("p");
+      name.innerText = elem.name;
+
+      var smallbox = document.createElement("div");
+
+      smallbox.setAttribute("id", "pricebox");
+
+      var strike = document.createElement("strike");
+      strike.setAttribute("id", "strike");
+      strike.innerText = elem.strikedoffprice;
+
+      var price = document.createElement("p");
+      price.setAttribute("id", "price");
+      price.innerText = "₹" + elem.price;
+
+      var disc = document.createElement("p");
+      disc.setAttribute("id", "disc");
+      disc.innerText = elem.disc;
+
+      var smallbox2 = document.createElement("div");
+      smallbox2.setAttribute("id", "cartbox");
+
+      var wish = document.createElement("button");
+      wish.innerText = "♡";
+      wish.setAttribute("id", "wish");
+      wish.addEventListener("click", function () {
+        addtowishfunc(elem);
+      });
+
+      var cart = document.createElement("button");
+      cart.innerText = "🛒 Add to Cart";
+      cart.setAttribute("id", "cart");
+      cart.addEventListener("click", function () {
+        addcartfunc(elem);
+      });
+
+      namebox.append(name);
+      smallbox.append(strike, price, disc);
+      smallbox2.append(cart, wish);
+      box.append(img, sale, namebox, smallbox, smallbox2);
+      document.getElementById("showProduct").append(box);
+    });
+  }
+  var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  function addtowishfunc(elem){
+    wishlist.push(elem);
+    localStorage.setItem('wishlist',JSON.stringify(wishlist));
+  }
+  var cart = JSON.parse(localStorage.getItem("addcartArr"))||[];
+  function addcartfunc(ele){
+    cart.push(ele);
+    localStorage.setItem("addcartArr",JSON.stringify(cart));
+  }
+</script>
 </html>
 
 

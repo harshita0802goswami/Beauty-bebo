@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signi page</title>
+
+</head>
+<style>
+    #container {
+        margin: auto;
+        width: 35%;
+        padding: 2%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    #sp1 {
+        text-align: center;
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    #sp2 {
+        text-align: center;
+    }
+
+    input,
+    label {
+        padding: 10px;
+        width: 92%;
+        margin: 5px 0px 20px 0px;
+    }
+
+    label {
+        margin-left: -10px;
+    }
+
+    #checkbox {
+        width: auto;
+    }
+    #upper{
+        text-align: center;
+    }
+
+    #bt1 {
+        background-color: #3b5998;
+        color: #fff;
+    }
+
+    #bt2 {
+        background-color: #dd4b39;
+        color: #fff;
+    }
+
+    #bt1,#bt2 {
+        text-decoration: none;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        padding: 6px 12px 6px 15px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #Firstname,
+    #Lastname {
+        width: 37%;
+        margin-right: 42px;
+    }
+
+    #label2 {
+        margin-left: 31%;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    #sp2 {
+        margin: 20px 0px 20px 0px;
+    }
+
+    #submit {
+
+        width: 30%;
+        border: #444444;
+        background-color: #444444;
+        color: white;
+        height: 35px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+
+    #submit:hover {
+        background-color: #DD0285;
+    }
+    .fb{
+        background-color: #3b5998;
+        color: white;
+    }
+</style>
+<script src="https://kit.fontawesome.com/4d7b52dcbb.js" crossorigin="anonymous"></script>
+
+<body>
+
+    <div id="sp1">
+        <span>CREATE NEW CUSTOMER ACCOUNT</span>
+    </div>
+
+    <div id="upper">
+
+        <a href="https://www.facebook.com/" id="bt1"><i class="fa-solid fa-f"></i> Sign in with
+                Facebook</a>
+        <a href="https://www.gmail.com/" id="bt2"><i class="fa-solid fa-g"></i> Sign in with Google</a>
+    </div>
+
+    <div id="sp2">
+        <span> --OR-- </span>
+    </div>
+
+    <div id="container">
+        <form>
+            <span>PERSONAL INFORMATION</span>
+            <hr>
+            <label for="" id="label1">First Name </label>
+            <label for="Lastname" id="label2">Last Name</label><br>
+
+            <input type="text" id="Firstname" />
+            <input type="text" id="Lastname"><br>
+
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox">Sign up for Newsletter</label><br>
+
+            <label for="">Email</label><br>
+            <input type="email" id="email"><br>
+
+            <label for="">Phone</label><br>
+            <input type="number" id="number"><br>
+
+            <label for="">Password</label><br>
+            <input type="password" id="password" /><br>
+
+            <label for="">Confirm Password</label><br>
+            <input type="password" id="confirmpassword" /><br>
+            <input type="submit" value="create an account" id="submit">
+            </form>
+
+
+
+            <p>if u already have an account ?<a href="login.html">LOGIN</a></p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", Signup);
+
+    function Signup() {
+        var arr = [];
+        event.preventDefault();
+        var Fname = document.getElementById("Firstname").value;
+        var Lname = document.getElementById("Lastname").value;
+        var email = document.getElementById("email").value;
+        var num = document.getElementById("number").value;
+        var pass = document.getElementById("password").value;
+        var Cpass = document.getElementById("confirmpassword").value;
+        if (Cpass != pass) {
+            alert("Confirm Password must be same!!");
+        }
+        else if (pass != "" && email != "") {
+            var obj = { Fname: Fname, Lname: Lname, email: email, num: num, pass: pass, Cpass: Cpass };
+            arr.push(obj);
+            localStorage.setItem("SignArr", JSON.stringify(arr));
+            alert("Account Created Succesfully");
+            document.getElementById("ancer").href = "login.html"
+        }
+        document.getElementById("Firstname").value="";
+         document.getElementById("Lastname").value="";
+        document.getElementById("email").value="";
+         document.getElementById("number").value="";
+         document.getElementById("password").value="";
+         document.getElementById("confirmpassword").value="";
+
+    }
+</script>
