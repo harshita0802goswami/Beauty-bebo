@@ -17,7 +17,7 @@
         <a href="#">
             <img src="https://www.beautybebo.com/pub/media/bb-app.png" alt="">
         </a>
-      </div>
+      </div><br><br>
     <div class="open-div"></div>
 <div id="lineTop">
     <div id="circle1"><span>&#10003;</span></div>
@@ -96,7 +96,7 @@
 
            <div class="input">
                <label>Zip/Postal Code <span class="star">*</span></label>
-               <input type="text" id="zipcode" class="shipping">
+               <input type="number" id="zipcode" class="shipping">
              
               </div>
            <div class="input">
@@ -116,16 +116,61 @@
                 <option value="UAE"> United Arab Emirates</option>
             </select>
              </div>
+             <div class="input">
+                <label>Email<span class="star">*</span></label>
+                <input type="email" id="email" class="shipping">
+            </div>
 
            <div class="input">
                <label>Phone Number <span class="star">*</span></label>
-               <input type="number" id="phoneNumber" class="shipping">
+               <input type="phone" id="phoneNumber" class="shipping">
            </div>
             <hr>
-          <button id="btn1togoPaymentPage"><a id="atag"href="paymentPage.html">Confirm</a></button> 
+          <button id="btn1togoPaymentPage">Confirm</button> 
         </form>
-    </div>
    
+   <!-- ???Payment section -->
+    </div>
+    <div id="PaymentMethodMain">
+        <h2>Payment Method</h2>
+         <hr><br>
+      
+         <div>
+      <input type="radio" id="Cash on deliver" name="drone" value="Cash on deliver"
+             checked>
+      <label for="huey">Cash on deliver</label><br><br><hr><br>
+    </div>
+    <div>
+      <input type="radio" id="dewey" name="drone" value="dewey">
+      <label for="dewey">Debit/Credit Card/Net banking/Wallet</label><br><br><hr><br>
+    </div>
+
+    <div>
+    
+       <form action="" id="form2">
+        <input  class="payeeDetails" id="cardnum"type="number" placeholder="Enter Card number"><br><br>
+        <input  class="payeeDetails" id="cvv" type="number" placeholder="Enter Cvv"><br><br>
+        <input class="payeeDetails" id="date" type="date" placeholder="Valid thru"><br><br>
+        <input class="payeeDetails" id="name" type="text" placeholder="Cardholder Name"><br><br>
+        <hr> <br> 
+        <!-- <input id="submit2" type="submit" value="PLACE ORDER"> -->
+        <button id="submit2"> <a id="anchor" href="OrdsucessFullMsg.html">PlaceOrder</a> </button>
+       </form>
+      </div>
+</div>
 </body>
 </html>
 <script src="https://kit.fontawesome.com/38a85f32db.js" crossorigin="anonymous"></script>
+<script>
+
+
+
+
+    var btn=document.getElementById("btn1togoPaymentPage");
+    btn.addEventListener("click",clickfn)
+    function clickfn() {
+   window.alert("Information Saved");
+    window.location.reload();
+  }
+
+</script>

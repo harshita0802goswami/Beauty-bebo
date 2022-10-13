@@ -250,7 +250,7 @@
                   <li>AYURVEDA<i class="fa-solid fa-chevron-down"></i></li>
                   <li>BRANDS<i class="fa-solid fa-chevron-down"></i></li>
               </ul>
-              <button>
+              <button class="goToCartBtn">
                   <i class="fa-solid fa-bag-shopping"></i>
                   <span>MY CART</span>
               </button>
@@ -812,4 +812,35 @@
       document.querySelector("#container").append(box);
     });
   }
+
+
+  // ===========================================
+    //here we use locale storage to store respected items when it is click
+    var skinArrofObj= JSON.parse(localStorage.getItem("cart")) || [];
+  function addcartfunc(elem){
+        var exist =skinArrofObj.filter(function(el){
+            return elem.name == el.name
+        })
+        if(exist.length>0){
+          // var x=+elem.rate+ +45;
+          // // console.log(price);
+          // ayurvedaArrofObj.rate = +x;
+          // console.log(ayurvedaArrofObj);
+          // localStorage.setItem('cart',JSON.stringify(ayurvedaArrofObj));
+            alert('Added already');
+        }
+        else{
+            alert('Added to cart')
+            skinArrofObj.push(elem)
+            localStorage.setItem('cart',JSON.stringify(skinArrofObj))
+            // console.log(addcartArr)
+        }
+    }
+  
+    
+  //LINKING MyCart Section to cart.Html
+    document.querySelector(".goToCartBtn").addEventListener("click",sendingToCart);
+  function sendingToCart(){
+  window.location.href="../cart.html";
+}
 </script>

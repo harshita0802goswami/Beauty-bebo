@@ -1,12 +1,14 @@
 #lineTop {
+    
     display: flex;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     margin-left: 25px;
     align-items: center;
     margin-bottom: 50px;
     /* position: relative; */
-    width: 80%;
+    width:400px;
     margin: auto;
+    margin-left: 10%;
     border: 1px solid black;
 }
 
@@ -34,7 +36,7 @@
     background-color: whitesmoke;
     position: absolute;
     /* top: 28.4%; */
-    left: 6.1%;
+    left: 9.1%;
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -50,7 +52,7 @@
     border-radius: 50%;
     background-color: whitesmoke;
     position: absolute;
-    left: 17.5%;
+    left: 20.5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,8 +62,8 @@
 
 #belowlineHead {
     display: flex;
-    margin-top: -20px;
-    margin-left: 30px;
+    margin-top: 30px;
+    margin-left: 70px;
     align-items: center;
     justify-content: space-around;
     width: 480px;
@@ -140,9 +142,35 @@ label{
     margin: auto;
     justify-content: center;
     width: 30%;
+    margin-top: 0%;
 }
 .payeeDetails{
     width: 100%;
     height: 20px;
     margin-top: 10px;
 }
+#submit2{
+    width: 150px;
+    height: 30px;
+    background-color: #6e6c6e;
+    border-radius: 6px;
+}
+#anchor{
+    text-decoration: none;
+    /* background-color: #6e6c6e; */
+    color: white;
+  
+}
+#submit2:hover{
+background-color: #dd0285;
+}
+/* //For chrome, Safari, Edge, Opera :removing arrow from input tag */ */
+   input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* for mozila */
+ input[type=number] {
+  -moz-appearance: textfield;
+} 
+  
