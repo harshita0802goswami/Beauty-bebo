@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 25px;
-    margin: 2% 2%;
+    margin: 0% 2%;
+  margin-bottom: 25px;
 }
 #cartcontent {
     width: 60%;
@@ -11,11 +12,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     margin-top: 20px;
     margin-left:7% ;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
   }
   #Summary{
+    margin-top: 1.5%;
     margin-right:10% ;
     margin-left: 2%; ;
+    padding: auto;
   }
   #shoppingCartH3{
 
@@ -88,3 +92,91 @@
   #uparrow:active{
     background-color:  #dd0285;
   }
+  /* //deletebutton */
+  #remove{
+    height: 40px;
+    width: 90px;
+  }
+  table, th, td {
+    /* border: 1px solid black; */
+    padding: 5px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  }
+  tbody>tr{
+  height: 100px;
+  text-align: center;
+  }
+  /* //cart item images size */
+  #images{
+ height: 200px;
+ width: 200px;
+ margin-left: 0;
+/* padding: auto; */
+  }
+  #tbodyimgandPdetailbox{
+    display: flex;
+    justify-content: space-around;
+  }
+  #tbodyimgandPdetailbox>p{
+    margin-top: 15%;
+    margin-bottom: -85%;
+    margin-left: 10%;
+  
+  }
+  #shoppingCartH3{
+    margin-top:25px;
+    
+  }
+  /* //cat content sizing ends here */
+  #discountedprice{
+    margin-top: -5%;
+    margin-left: auto;
+    
+  }
+/* 
+  //For chrome, Safari, Edge, Opera :removing arrow from input tag */
+   input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* for mozila */
+ input[type=number] {
+  -moz-appearance: textfield;
+} 
+
+/* //insserting rupee sign inside input tag */
+#anchor2p2c{
+  text-decoration: none;
+  color: white;
+}
+
+/* meidum screens */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #CartMaincontainer{
+    flex-direction: column;
+  }
+  #Summary{
+    width: 60%;
+    margin-left: 6.8%;
+
+  }
+  #discountedprice{
+    text-align: right;
+  }
+  }
+  /* small screens */
+  @media all and (min-width: 320px) and (max-width: 767px) {
+    #CartMaincontainer{
+      flex-direction: column;
+    }
+    #Summary{
+      width: 60%;
+      margin-left: 6.8%;
+  
+    }
+    #discountedprice{
+      text-align: right;
+    }
+    }
+  

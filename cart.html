@@ -278,7 +278,8 @@
                 <th id="item">ITEM</th>
                 <th id="price">PRICE</th>
                 <th id="qty">QTY</th>
-                <th id="subtotal">SUBTOTAL</th>
+                <!-- <th id="subtotal">SUBTOTAL</th> -->
+                <th id="remove">REMOVE ITEM</th>
               </tr>
             </div>
           </thead>
@@ -302,10 +303,10 @@
             <div><b>Shipping</b>(Best Way - Max 7 Business <br />days)</div>
             <div>₹0.00</div>
           </div>
-          <hr />
+          <hr /><br>
           <div class="subtotal">
             <div>Price after Discount</div>
-            <div><input type="number" placeholder= "₹ 0.00" id="discountedprice" /></div>
+            <div id="rupeeinsideinputtag"><input type="number" placeholder= "₹ 0.00" id="discountedprice" /></div>
           </div>
           <hr />
           <div class="input">
@@ -319,7 +320,7 @@
           <button id="applydisc">APPLY DISCOUNT</button>
         </div>
         <div id="checkoutdiv">
-            <button id="checkoutbtn">PROCEED TO CHECKOUT</button>
+            <button id="checkoutbtn"><a id="anchor2p2c" href="Checkout.html">PROCEED TO CHECKOUT</a> </button>
           </div>
       </div>
      
@@ -399,6 +400,7 @@
   //getting data from product page
   var cartData=JSON.parse(localStorage.getItem("cart")) || [];
     console.log(cartData);
+    console.log("Mydata");
 if(cartData.length==0){
     document.getElementById("cart").innerText="Cart is Empty.Add some items";
 }
@@ -408,56 +410,60 @@ else{
 
 function displayCart(cartData){
 cartData.map(function(elem,i){
-  var div =document.createElement("div");
-  div.style.margin = "10px 12px";
-  div.style.display = "flex";
-  div.style.boxShadow = "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px";
+  
+      var tr=document.createElement("tr");
+     
+      var td1=document.createElement("td");
 
-  var img = document.createElement("img");
-    img.src = elem.imgurl;
-    // img.setAttribute("id", "images");
+      var div =document.createElement("div");
+      div.setAttribute("id","tbodyimgandPdetailbox")
+      var img = document.createElement("img");
+     img.src = elem.imgurl;
+     img.setAttribute("id", "images");
+     var name = document.createElement("p");
+     name.textContent = elem.name;
+     name.style.fontWeight = "bold";
+     name.style.marginLeft = "10px";
+     div.append(img,name);
+     td1.append(div);
 
-    //product na,me
-    var name = document.createElement("p");
-    name.textContent = elem.name;
-    name.style.fontWeight = "bold";
-    name.style.marginLeft = "10px";
+     var td2=document.createElement("td");
+      td2.innerText=elem.price;
 
-    var qty = document.createElement("p");
-    qty.textContent = 1;
-    qty.style.margin = "16px 25px 0px 30px";
+       var td3 = document.createElement("td");
+       td3.innerText=1;
 
-    var total = document.createElement("p");
-    total.textContent = elem.rate;
-    total.style.margin = "16px 25px 0px 30px";
-
-    var btn = document.createElement("button");
+  var td4=document.createElement("td");
+  var btn = document.createElement("button");
     btn.innerText = "Remove";
     btn.setAttribute("id", "remove");
     btn.addEventListener("click", function () {
       removeItem(elem, i);
+    
     });
-    div.append(img, name, qty, total, btn);
+    td4.append(btn);
 
-    document.querySelector("tbody").append(div);
+
+      tr.append(td1,td2,td3,td4)
+    document.querySelector("tbody").append(tr);
 });
 }
   //calculating total price
   var total = cartData.reduce(function (acc, elem) {
-    return acc + Number(elem.rate);
+    return acc + +(elem.price);
   }, 0);
 
   document.querySelector("#subtotalprice").innerText =
-    "₹" + "  " + total + ".00";
+    "₹" + "  " + +total + ".00";
 
     //--------applydiscount-----------applydisc
     document.querySelector("#applydisc").addEventListener("click",discountFn);
     function discountFn(){
-      console.log(total);
+      // console.log(total);
       var coupn = document.querySelector("#discount_code").value;
      
       if (coupn == "MASAI30") {
-      var netP = total - (total * 30) / 100;
+      var netP = +total - (+total * 30) / 100;
       console.log(netP);
       document.querySelector("#discountedprice").value = netP ;
       alert("Congratulation You have got 30% Discount");
@@ -478,7 +484,7 @@ function removeItem(elem, index) {
     window.location.reload();
   }
   // ===================
- 
+  
   
 
 </script>

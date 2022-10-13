@@ -250,7 +250,7 @@
                   <li>AYURVEDA<i class="fa-solid fa-chevron-down"></i></li>
                   <li>BRANDS<i class="fa-solid fa-chevron-down"></i></li>
               </ul>
-              <button>
+              <button class="goToCartBtn">
                   <i class="fa-solid fa-bag-shopping"></i>
                   <span>MY CART</span>
               </button>
@@ -792,4 +792,27 @@
       document.querySelector("#container").append(box);
     });
   }
+  // ===========================
+  var hairArrOfobj= JSON.parse(localStorage.getItem("cart")) || [];
+  function addcartfunc(elem){
+        var exist = hairArrOfobj.filter(function(el){
+            return elem.name == el.name
+        })
+        if(exist.length>0){
+               alert('Added already');
+        }
+        else{
+            alert('Added to cart')
+            hairArrOfobj.push(elem)
+            localStorage.setItem('cart',JSON.stringify(hairArrOfobj))
+            // console.log(addcartArr)
+        }
+    }
+  
+    
+  //LINKING MyCart Section to cart.Html
+    document.querySelector(".goToCartBtn").addEventListener("click",sendingToCart);
+  function sendingToCart(){
+  window.location.href="../cart.html";
+}
 </script>
