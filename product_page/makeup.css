@@ -139,7 +139,7 @@ body {
   font-weight: bold;
   /* position: relative; */
 }
-.nav > ul > li > a{
+.nav > ul > li > a {
   color: white;
 }
 .nav ul li:hover {
@@ -218,7 +218,6 @@ ul li a {
 #product-div h2 {
   color: grey;
 }
-
 
 #sort-div {
   width: 100%;
@@ -436,4 +435,16 @@ ul li a {
 #list > p {
   line-height: 20px;
   word-spacing: 8px;
+}
+#remove {
+  background-color: #dd0285;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  border-radius: 4px;
+  margin-top: 30px ;
+  margin-left: 60px;
 }
