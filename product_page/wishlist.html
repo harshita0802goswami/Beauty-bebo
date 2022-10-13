@@ -26,7 +26,7 @@
     <section>
         <div id="topBar">
             <div>
-                <a href=""><img src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png" alt=""></a>
+                <a href="../index.html"><img src="https://www.beautybebo.com/pub/media/logo/default/beautybebo_1.png" alt=""></a>
             </div>
             <div>
                 
@@ -36,7 +36,7 @@
                
             </div>
             <div>
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart"><a href="wishlist.html"></a></i>
                 <i class="fa-solid fa-user"></i>
                 <span>My Account<i class="fa-solid fa-chevron-down"></i>
                     <div>
@@ -47,13 +47,14 @@
   
             </div>
         </div>
+
       </section>
       
         <div id="navBar">
             <i class="fa-solid fa-bars"></i>
             <div class="nav">
                 <ul>
-                    <li>MAKEUP <i class="fa-solid fa-chevron-down"></i>
+                    <li> <a href="makeup.html">MAKEUP<i class="fa-solid fa-chevron-down"></i></a> 
                         <div class="navData">
                             <div>
                                <a href="">FACE</a>
@@ -307,22 +308,20 @@
           </div>
           
         </div>
-      </div>
 </body>
 </html>
 <script>
-    var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    displayWishlist();
-
-    function displayWishlist(){
-        document.getElementById('container').innerText = "";
-        wishlist.map(function(e,index){
-            var box = document.createElement("div");
+    var products = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log(products);
+   displayWishlist();
+   function displayWishlist(){
+      document.getElementById('container').innerText = '';
+      products.map(function (elem,index){
+         var box = document.createElement("div");
       box.setAttribute("id", "box");
 
       var img = document.createElement("img");
       img.setAttribute("src", elem.imgurl);
-
       var sale = document.createElement("span");
       sale.innerText = "Sale";
       sale.setAttribute("id", "sale");
@@ -348,11 +347,23 @@
       var disc = document.createElement("p");
       disc.setAttribute("id", "disc");
       disc.innerText = elem.disc;
-        });
 
-        namebox.append(name);
-        smallbox.append(strike, price, disc);
-        box.append(img, sale, namebox, smallbox);
+      var deleteItem = document.createElement('button');
+      deleteItem.setAttribute('id','remove');
+      deleteItem.innerText = 'Remove Item';
+      deleteItem.addEventListener('click',function(){
+         deleteWishlist(index);
+      })
+
+      namebox.append(name);
+      smallbox.append(strike, price, disc);
+      box.append(img, sale, namebox, smallbox,deleteItem);
       document.querySelector("#container").append(box);
-    }
+      });
+   }
+   function deleteWishlist(i){
+      products.splice(i,1);
+      localStorage.setItem('product',JSON.stringify('product'));
+      displayWishlist();
+   }
 </script>

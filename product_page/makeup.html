@@ -38,7 +38,7 @@
              
           </div>
           <div>
-              <i class="fa-solid fa-heart"></i>
+            <a href="wishlist.html"><i class="fa-solid fa-heart"></i></a>
               <i class="fa-solid fa-user"></i>
               <span>My Account<i class="fa-solid fa-chevron-down"></i>
                   <div>
@@ -764,9 +764,10 @@
   }
 
   displayData(makeupArr);
+
   function displayData(data) {
     document.querySelector("#container").innerText = "";
-    makeupArr.map(function (elem) {
+    makeupArr.map(function (elem,i) {
       var box = document.createElement("div");
       box.setAttribute("id", "box");
 
@@ -805,15 +806,15 @@
       var wish = document.createElement("button");
       wish.innerText = "🤍";
       wish.setAttribute("id", "wish");
-      wish.addEventListener("click", function () {
-        addtowishfunc(elem);
+      wish.addEventListener('click',function(){
+        addToWishlist(i);
       });
 
       var cart = document.createElement("button");
       cart.innerText = "🛒 Add to Cart";
       cart.setAttribute("id", "cart");
       cart.addEventListener("click", function () {
-        addcartfunc(elem);
+        addcartfunc(i);
       });
 
       namebox.append(name);
@@ -824,9 +825,13 @@
     });
   }
 
-  var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-  function addtowishfunc(elem){
-    wishlist.push(elem);
-    localStorage.setItem('wishlist',JSON.stringify(wishlist));
-  }
+  //wishlist function
+  var wishlistArr = JSON.parse(localStorage.getItem('cart')) || [];
+ function addToWishlist(index){
+    var product = makeupArr.filter(function(elem,i){
+      return i === index;
+    });
+    wishlistArr.push(product[0]);
+    localStorage.setItem('cart',JSON.stringify(wishlistArr));
+ }
 </script>
