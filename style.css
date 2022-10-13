@@ -263,10 +263,13 @@
 
 
 /* Down Banner Image */
-#downImg{
+/* #downImg{
     width: 1200px;
     margin: 15px auto;
 }
+#downImg img{
+    width: 100%;
+} */
 
 
 /* view Product Section start */
