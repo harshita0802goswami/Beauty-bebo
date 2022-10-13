@@ -72,6 +72,8 @@ body {
 }
 #topBar div:nth-child(3) > span {
   position: relative;
+  top: 100%;
+  bottom: 0%;
   z-index: 1000;
 }
 #topBar div:nth-child(3) > span > div {
@@ -107,7 +109,7 @@ body {
 #navBar {
   width: 100%;
   background-color: #dd0285;
-  z-index: 1000;
+  z-index: 100;
   position: sticky;
   top: -2px;
 }
@@ -173,7 +175,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
   visibility: hidden;
-  z-index: 1000;
+  z-index: 100;
   opacity: 0;
   transition: 0.2s;
 }
