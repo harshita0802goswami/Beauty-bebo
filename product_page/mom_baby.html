@@ -21,11 +21,10 @@
       src="https://kit.fontawesome.com/e918a69d95.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="makeup.css" />
   </head>
 
   <body>
-    <!-- Nave bar Design -->
     <section>
       <div id="topBar">
           <div>
@@ -261,447 +260,491 @@
               <span>MY CART</span>
           </button>
       </div>
- 
 
-    <!-- product section starts -->
-    <h2>Personal Care</h2>
-    <!-- Top sort options  -->
-    <div id="sort-div">
-      <select name="sort" id="sort" onchange="handleSorting()">
-        <option value="">Sort By :</option>
-        <option value="productName">Product Name</option>
-        <option value="lth">Price: Low to High</option>
-        <option value="htl">Price: High to Low</option>
-      </select>
+    <div id="mainContainer">
+      <!-- sidebar section -->
+      <div id="sidebar">
+        <div id="ctg">
+          <p>CATEGORY <span>&#43;</span></p>
+          <div id="list"></div>
+        </div>
+        <div id="option">
+          <h3>SHOP BY</h3>
+          <div id="skn">
+            <p>SKIN TYPE <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="color">
+            <p>COLOR <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="prc">
+            <p>PRICE <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="brnd">
+            <p>BRAND <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="shds">
+            <p>SHADES <span>&#43;</span></p>
+            <div></div>
+          </div>
+          <div id="forml">
+            <p>FOMULATION <span>+</span></p>
+            <div></div>
+          </div>
+        </div>
+        <img
+          src="https://www.beautybebo.com/pub/media/free-delivery.jpg"
+          alt=""
+        />
+      </div>
 
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>></li>
-      </ul>
+      <!-- product section -->
+      <div id="product-div">
+        <h2>MOM & BABY CARE</h2>
+
+        <!-- Top sort options  -->
+        <div id="sort-div">
+          <select name="sort" id="sort" onchange="handleSorting()">
+            <option value="">Sort By :</option>
+            <option value="productName">Product Name</option>
+            <option value="lth">Price: Low to High</option>
+            <option value="htl">Price: High to Low</option>
+          </select>
+
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>></li>
+          </ul>
+        </div>
+
+        <!-- product lists -->
+        <div id="container"></div>
+      </div>
     </div>
 
-    <div id="container"></div>
-    <!-- bottom sort section -->
-    <div id="sort-div">
-      <select name="sort" id="sort">
-        <option value="position">Sort: Position</option>
-        <option value="productName">Product Name</option>
-        <option value="newArrival">New Arrivals</option>
-        <option value="lth">Price: Low to high</option>
-        <option value="htl">Price: High to low</option>
-      </select>
-
-      <ul>
-        <li id="one">1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>></li>
-      </ul>
-    </div>
-    <!-- </div> -->
   </body>
 </html>
 <script>
-  var personalCareArr = [
+  var mom_babyArr = [
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/8/9/8908003416557_1.png",
-      name: "Organic Harvest Cleansing Milk With Essential Oils",
-      price: "491.00",
-      strikedoffprice: "545.00",
-      disc: "10% off",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/1/31_7_4.jpg",
+      name: "Mamaearth Agent Apple Body Lotion For Kids With Apple & Oat",
+      price: "351.00",
+      strikedoffprice: "₹399.00",
+      disc: "12% off",
       rate: 322,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/6/8/680c9508904311903031__1_.jpg",
-      name: "Wow Skin Science Thai Body Massage Oil",
-      price: "540.00",
-      strikedoffprice: "599.00",
-      disc: "10% off",
-      //rate: 475,
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/0/30_6_4.jpg",
+      name: "Mamaearth Brave Blueberry Body Lotion For Kids With",
+      price: "351.00",
+      strikedoffprice: "₹399.00",
+      disc: "12% off",
+      rate: 475,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/c/c/cca52498904311901341_1.jpg",
-      name: "Wow Skin Science Moroccan Rose Otto Foaming Body Wash",
-      price: "339.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 735,
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/8/28_8_4.jpg",
+      name: "Mamaearth Major Mango Body Lotion For Kids With Mango",
+      price: "351.00",
+      strikedoffprice: "₹399.00",
+      disc: "12% off",
+      rate: 735,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/407c3408908003416601_1.jpg",
-      name: "Organic Harvest Lavender Essential Oil",
-      price: "405.00 ",
-      strikedoffprice: "450.00",
-      disc: "10% off",
-      //: 604,
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/5/25_13_1.jpg",
+      name: "Mamaearth Original Orange Body Lotion For Kids With",
+      price: "351.00 ",
+      strikedoffprice: "₹399.00",
+      disc: "12% off",
+      rate: 604,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/d/c/dcc62fd8904311902386_1.jpg",
-      name: "WOW Skin Science Ubtan Bodye Wash",
-      price: "339.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 699,
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/3/23_11_3.jpg",
+      name: "Mamaearth Super Strawberry Body Lotion For Kids With",
+      price: "351.00",
+      strikedoffprice: "₹399.00",
+      disc: "12% off",
+      rate: 699,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va109.jpg",
-      name: "Mamaearth Vitamin C Nourishing Bathing Soap With",
-      price: "299.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 1378,
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/7/17_14_2.jpg",
+      name: "Mamaearth After Bite Roll On For Rashes And Insect Bites",
+      price: "433.00",
+      strikedoffprice: "₹499.00",
+      disc: "13% off",
+      rate: 1378,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va106.jpg",
-      name: "Mamaearth Coco Nourishing Bathing Soap With Coffee ",
-      price: "299.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 539,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va103.jpg",
-      name: "Mamaearth Tea Tree Nourishing Bathing Soap With Tea Tree And",
-      price: "299.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 651,
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/1/6/16_17.jpg",
+      name: "Mamaearth Easy Tummy Roll On For Indigestion And Colic Relief - Hing And Fennel ",
+      price: "433.00",
+      strikedoffprice: "₹490.00",
+      disc: "13% off",
+      rate: 539,
     },
     {
       imgurl:
         "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va101.jpg",
-      name: "Mamaearth Ubtan Nourishing Bathing Soap With Turmeric",
-      price: "299.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 495,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va99.jpg",
-      name: "Mamaearth Natural Nourishing Bathing Soaps ",
-      price: "299.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 675,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va92.jpg",
-      name: "Mamaearth Charcoal Nourishing Bathing Soap With",
-      price: "299.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 299,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/_/9/.9.jpg",
-      name: "Ponds Super Light Gel Oil Free Moisturiser With Hyaluronic",
-      price: "538.00",
-      strikedoffprice: "598.00",
-      disc: "10% off",
-      //: 299,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va15.jpg",
-      name: "Vaadi Herbals Enticing Lemongrass Shower Gel",
-      price: "230.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 299,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/4/0/4045787429534.jpg",
-      name: "Schwarzkopf Professional Bonacure Hyaluronic Moisture",
-      price: "950.00",
-      strikedoffprice: "₹1,000.00",
-      disc: "5% Off",
-      //: 539,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va11.jpg",
-      name: "Vaadi Herbals Breezy Olive & Green Apple Shower Gel",
-      price: "230.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 338,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be219.jpg",
-      name: "Vaadi Herbals Refreshing Lemon & Basil Shower Gel",
-      price: "245.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 1425,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be211.jpg",
-      name: "Vaadi Herbals Enchanting Rose & Mogra Shower Gel",
-      price: "245.00",
-      strikedoffprice: "",
-      disc: "",
-      //: 450,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be186.jpg",
-      name: "O3+ D-Tan Liposoluble Wax (Italian Formula)",
-      price: "911.00",
-      strikedoffprice: "₹990.00",
-      disc: "7% off",
-      //: 920,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be168.jpeg",
-      name: "Beeone Professional Aloevera Liposoluble Wax",
-      price: "842.00",
-      strikedoffprice: "₹990.00",
-      disc: " 15% off",
-      //: 759,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be167.jpeg",
-      name: "Beeone Professional Argan Oil Liposoluble Wax",
-      price: "842.00",
-      strikedoffprice: "₹990.00",
-      disc: " 15% off",
-      //: 325,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be166.jpeg",
-      name: "Beeone Professional Charcoal Liposoluble Wax",
-      price: "842.00",
-      strikedoffprice: "₹990.00",
-      disc: "15% off",
-      //: 446,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be165.jpeg",
-      name: "Beeone Professional Avocado Liposoluble Wax",
-      price: "842.00",
-      strikedoffprice: "₹990.00",
-      disc: "15% off",
-      //: 539,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be164.jpeg",
-      name: "Beeone Professional De Tan Liposoluble Wax",
-      price: "842.00",
-      strikedoffprice: "₹990.00",
-      disc: "15% off",
-      //: 299,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be163.jpeg",
-      name: "Beeone Professional Dark Chocolate Liposoluble Wax",
-      price: "842.00",
-      strikedoffprice: "₹990.00",
-      disc: "15% off",
-      //: 299,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be162.jpeg",
-      name: "Beeone Professional White Chocolate Liposoluble Wax",
-      price: "842.00",
-      strikedoffprice: "₹990.00",
-      disc: "15% off",
-      //: 449,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be161.jpg",
-      name: "Beeone Green Apple Milky Wax",
-      price: "248.00",
-      strikedoffprice: "₹310.00",
-      disc: "20% off",
-      //: 689,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be160.jpg",
-      name: "Beeone Fairness Milky Wax",
-      price: "279.00",
-      strikedoffprice: "₹310.00",
-      disc: "10% off",
-      //: 889,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be159.jpg",
-      name: "Beeone Bridal Milky Wax",
-      price: "248.00",
-      strikedoffprice: "₹310.00",
-      disc: "20% off",
-      //: 299,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be158.jpg",
-      name: "Beeone Banana Milky Wax",
-      price: "248.00",
-      strikedoffprice: "₹310.00",
-      disc: "20% off",
-      //: 545,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be157.jpg",
-      name: "Beeone Strawberry Milky Wax",
-      price: "279.00",
-      strikedoffprice: "₹310.00",
-      disc: "10% off",
-      //: 539,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be156.jpg",
-      name: "Beeone Pearl Milky Wax",
-      price: "248.00",
-      strikedoffprice: "₹310.00",
-      disc: "20% off",
-      //: 450,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be155.jpg",
-      name: "Beeone Orange Milky Wax",
-      price: "248.00",
-      strikedoffprice: "₹310.00",
-      disc: "20% off",
-      //: 299,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be154.jpg",
-      name: "Beeone Milk Sensitive Milky Wax",
-      price: "279.00",
-      strikedoffprice: "₹310.00",
-      disc: "10% off",
-      //: 449,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/c/3/c35.jpg",
-      name: "Colorbar Body Wash & Shower Gel - Malibu Sunset",
-      price: "311.00",
-      strikedoffprice: "₹345.00",
-      disc: "10% off",
-      //: 449,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/c/3/c34.jpg",
-      name: "Colorbar Body Wash & Shower Gel - Toast To Tahiti",
-      price: "311.00",
-      strikedoffprice: "₹345.00",
-      disc: "10% off",
-      //: 643,
-    },
-    {
-      imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/s/1/s10.jpg",
-      name: "Fiama Blackcurrant & Bearberry Shower Gel - 500ml",
-      price: "359.00",
+      name: "Mamaearth Milky Soft Shampoo With Oats, Milk And Calendula For Babies",
+      price: "347.00",
       strikedoffprice: "₹399.00",
+      disc: "13% off",
+      rate: 651,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va101.jpg",
+      name: "Mamaearth Milky Soft Shampoo With Oats, Milk And Calendula For Babies",
+      price: "347.00",
+      strikedoffprice: "₹399.00",
+      disc: "13% off",
+      rate: 495,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va131.jpg",
+      name: "Mamaearth Milky Soft Body Wash For Babies With Oats, Milk And Calendula ",
+      price: "347.00",
+      strikedoffprice: "₹399.00",
+      disc: "13% off",
+      rate: 675,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va126.jpg",
+      name: "Mamaearth Milky Soft Body Lotion With Oats, Milk & Calendula",
+      price: "347.00",
+      strikedoffprice: "₹399.00",
+      disc: "13% off",
+      rate: 299,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va96.jpg",
+      name: "Mamaearth Milky Soft Bathing Bar For Babies With Oats, Milk & Calendula - Pack Of 2",
+      price: "438.00",
+      strikedoffprice: "₹498.00",
+      disc: "12% off",
+      rate: 299,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/v/a/va94.jpg",
+      name: "Mamaearth Milky Soft Diaper Rash Cream For Babies",
+      price: "299.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 539,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be176.jpg",
+      name: "Chicco Natural Sensation Bath Shampoo",
+      price: "450.00",
+      strikedoffprice: "₹499.00",
       disc: "10% off",
-      //: 299,
+      rate: 539,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/p/8/p8_1.jpg",
-      name: "Pears Oil Clear & Glow Body Wash",
-      price: "197.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/b/e/be172.jpg",
+      name: "Johnson's Baby Powder",
+      price: "235.00",
       strikedoffprice: "",
       disc: "",
-      //: 549,
+      rate: 338,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/p/5/p5_1.jpg",
-      name: "Pears Naturale Detoxifying Aloevera Bodywash",
-      price: "197.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mm1_1.jpg",
+      name: "Mamaearth Agent Apple Body Wash For Kids With Apple & Oat Protein",
+      price: "299.00",
       strikedoffprice: "",
       disc: "",
-      //: 288,
+      rate: 1425,
     },
     {
       imgurl:
-        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/p/2/p2_1.jpg",
-      name: "Pears Naturale Brightening Pomegranate Bodywash",
-      price: "197.00",
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/l/o/lot1.jpg",
+      name: "Lotus Herbals Baby + Eternal Love Baby Massage Oil",
+      price: "348.00",
+      strikedoffprice: "₹395.00",
+      disc: "12% off",
+      rate: 450,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm254.jpg",
+      name: "Mamaearth Clean Cuties Skin Cleanser",
+      price: "163.00",
+      strikedoffprice: "₹199.00",
+      disc: "18% off",
+      rate: 920,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm253.jpg",
+      name: "Mamaearth Perfume Body Mist 6 Months+ - Tropical Garden",
+      price: "299.00",
       strikedoffprice: "",
       disc: "",
-      //: 549,
+      rate: 759,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm248.jpg",
+      name: "Mamaearth Perfume Body Mist 6 Months+ - Joyful Jasmine",
+      price: "299.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 325,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm243.jpg",
+      name: "Mamaearth Moisturizing Daily Lotion For Babies And Milky Soft Natural Baby Face Cream",
+      price: "270.00",
+      strikedoffprice: "₹324.00",
+      disc: "17% off",
+      rate: 446,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm232.jpg",
+      name: "Mamaearth Natural Baby Lip Balm For Babies With Coconut Oil, Cocoa Butter & Orange",
+      price: "150.00",
+      strikedoffprice: "₹199.00",
+      disc: "25% off",
+      rate: 539,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm224.jpg",
+      name: "Mamaearth Detangle Hair Spray For Kids With Aloe Vera And Beetroot Extract",
+      price: "245.00",
+      strikedoffprice: "₹299.00",
+      disc: "18% off",
+      rate: 299,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm217.jpg",
+      name: "Mamaearth Gift Of Nature Kit For Newborns And Babies",
+      price: "1,365.00",
+      strikedoffprice: "₹1,499.00",
+      disc: "9% off",
+      rate: 299,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm211.jpg",
+      name: "Mamaearth Nourishing Bathing Bar For Kids (Pack Of 5)",
+      price: "425.00",
+      strikedoffprice: "₹499.00",
+      disc: "15% off",
+      rate: 449,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm199.jpg",
+      name: "Mamaearth Organic Bamboo Based Baby Wipes And Travel Pack",
+      price: "290.00",
+      strikedoffprice: "₹430.00",
+      disc: "17% off",
+      rate: 689,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/6/36_3.jpg",
+      name: "Mamaearth Natural Repellent Mosquito Patches For Babies With 12 Hour Protection ",
+      price: "346.00",
+      strikedoffprice: "₹399.00",
+      disc: "13% off",
+      rate: 889,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm192.jpg",
+      name: "Mamaearth Natural Breathe Easy Vapour Rub Balm, With Wintergreen, Eucalyptus And Tul",
+      price: "346.00",
+      strikedoffprice: "₹399.00",
+      disc: "13% off",
+      rate: 299,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm185.jpg",
+      name: "Mamaearth Natural Mosquito Repellent With Citronella & Lemongrass Oil",
+      price: "299.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 545,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm175.jpg",
+      name: "Mamaearth Deeply Nourishing Baby Wash",
+      price: "125.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 539,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm174.jpg",
+      name: "Mamaearth Deeply Nourishing Body Wash And Milky Soft Natural Baby Face Cream For Babies",
+      price: "270.00",
+      strikedoffprice: "₹324.00",
+      disc: "17% off",
+      rate: 450,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm167.jpg",
+      name: "Mamaearth Soothing Massage Oil For Babies 0 - 5 Years",
+      price: "299.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 299,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm166.jpg",
+      name: "Mamaearth Mineral Based Sunscreen For Babies Certified Toxin Free SPF 20+",
+      price: "299.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 449,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm165.jpg",
+      name: "Mamaearth Daily Moisturizing Baby Lotion",
+      price: "199.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 449,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm161.jpg",
+      name: "Mamaearth Easy Tummy Roll On For Indigestion And Colic Relief - Hing And Fennel",
+      price: "249.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 643,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/5/35_3.jpg",
+      name: "Mamaearth Awesome Orange Toothpaste For Kids - Pack Of 2",
+      price: "298.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 299,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/3/4/34_5_1.jpg",
+      name: "Mamaearth Fruit Punch Toothpaste For Kids - Pack Of 2",
+      price: "298.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 549,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm147.jpg",
+      name: "Mamaearth Talc Free Organic Dusting Powder For Babies - 50% Extra - (Pack Of 2)",
+      price: "346.00",
+      strikedoffprice: "₹399.00",
+      disc: "13% off",
+      rate: 288,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm141.jpg",
+      name: "Mamaearth Nourishing Hair Oil For Babies",
+      price: "299.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 549,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/m/m/mmm135.jpg",
+      name: "Mamaearth Mineral Based Sunscreen For Babies SPF20+ - Pack Of 2Be the first to review this product",
+      price: "300.00",
+      strikedoffprice: "",
+      disc: "",
+      rate: 799,
+    },
+    {
+      imgurl:
+        "https://www.beautybebo.com/pub/media/catalog/product/cache/37253e89591b79b38c00254331932999/2/5/25_12.jpg",
+      name: "Mamaearth Moisturizing Daily Lotion For Babies-(Pack Of 2)",
+      price: "342.00",
+      strikedoffprice: "₹399.00",
+      disc: "14% off",
+      rate: 949,
     },
   ];
-  
-  displayData(personalCareArr);
+
+  displayData(mom_babyArr);
   function handleSorting() {
     var selectedVal = document.getElementById("sort").value;
     console.log(selectedVal);
     //sorting by product name
     if (selectedVal === "productName") {
-      personalCareArr.sort(function (a, b) {
+      mom_babyArr.sort(function (a, b) {
         if (a.name > b.name) return 1;
         if (a.name < b.name) return -1;
         return 0;
       });
-      displayData(personalCareArr);
-      console.log(personalCareArr);
+      displayData(mom_babyArr);
+      console.log(mom_babyArr);
     } else if (selectedVal === "lth") {
-      personalCareArr.sort(function (a, b) {
+      mom_babyArr.sort(function (a, b) {
         return a.price - b.price;
       });
-      displayData(personalCareArr);
-      console.log(personalCareArr);
+      displayData(mom_babyArr);
+      console.log(mom_babyArr);
     } else if (selectedVal === "htl") {
-      personalCareArr.sort(function (a, b) {
+      mom_babyArr.sort(function (a, b) {
         return b.price - a.price;
       });
-      displayData(personalCareArr);
-      console.log(personalCareArr);
+      displayData(mom_babyArr);
+      console.log(mom_babyArr);
     }
   }
 
-  displayData(personalCareArr);
+  displayData(mom_babyArr);
   function displayData(data) {
     document.querySelector("#container").innerText = "";
-    personalCareArr.map(function (elem) {
+    mom_babyArr.map(function (elem) {
       var box = document.createElement("div");
+      box.setAttribute("id", "box");
 
       var img = document.createElement("img");
       img.setAttribute("src", elem.imgurl);
 
       var sale = document.createElement("span");
       sale.innerText = "Sale";
-      sale.setAttribute("id", "logo");
+      sale.setAttribute("id", "sale");
 
       var namebox = document.createElement("div");
       namebox.setAttribute("id", "namebox");
@@ -714,19 +757,22 @@
       smallbox.setAttribute("id", "pricebox");
 
       var strike = document.createElement("strike");
+      strike.setAttribute("id", "strike");
       strike.innerText = elem.strikedoffprice;
 
       var price = document.createElement("p");
-      price.innerText = '₹' + elem.price;
+      price.setAttribute("id", "price");
+      price.innerText = "₹" + elem.price;
 
       var disc = document.createElement("p");
+      disc.setAttribute("id", "disc");
       disc.innerText = elem.disc;
 
       var smallbox2 = document.createElement("div");
       smallbox2.setAttribute("id", "cartbox");
 
       var wish = document.createElement("button");
-      wish.innerText = "♡";
+      wish.innerText = "🤍";
       wish.setAttribute("id", "wish");
       wish.addEventListener("click", function () {
         addtowishfunc(elem);
@@ -746,4 +792,6 @@
       document.querySelector("#container").append(box);
     });
   }
+
+
 </script>

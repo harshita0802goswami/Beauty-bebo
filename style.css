@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#topBar div:nth-child(2) > p i {
+    padding: 0 20px 0 100px;
+    color: #dec5d4;
+  }
+
+/* header banner section start */
+
+#banner > div{
+    max-width: 1200px;
+    margin: 10px auto;
+    /* border: 1px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    display: flex;
+    justify-content: space-between;
+}
+#banner .catagory{
+    /* padding: 20px; */
+    /* border: 1px solid red; */
+    width: 23%;
+    
+}
+#banner .catagory h4{
+    padding: 20px 25px 10px;
+    /* text-align: center; */
+}
+#banner .catagory h4 i{
+    padding-right:10px;
+    display: inline-block;
+
+}
+#banner .catagory li >a > i{
+    padding-right:15px;
+}
+
+#banner .catagory ul li > a{
+    font-size: 14px;
+    font-weight: bold;
+}
+#banner .catagory ul li{
+    display: bock;
+    padding: 10px 25px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
+}
+#banner .catagory ul li:hover{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    
+}
+#banner .slider{
+    width: 75%;
+    box-sizing: border-box;
+    text-align: right;
+}
+#banner .slider img{
+    width: 95%;
+    padding: 10px 10px 30px;
+}
+/* header banner section end */
+
+/* down Header img */
+#downHeader{
+    max-width: 1200px;
+    margin: auto;
+}
+#downHeader img{
+    width: 100%;
+    transition: .4s;
+}
+#downHeader img:hover{
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    transform: scale(1.002);
+}
+/* down Header img end*/
+
+/* hot deal section */
+#hotDeal{
+    max-width: 1200px;
+    margin: 10px auto;
+}
+#hotDeal > div{
+    display: flex;
+    justify-content: space-between;
+}
+#hotDeal > div > h4 { 
+    border-bottom: 3px solid #ca63a1;
+    padding-bottom: 5px;
+}
+#hotDeal .showProduct{
+    width: 100%;
+    height: 300px;
+    border: 1px solid red;
+}
+
+
+/* two image section start */
+
+#twoImage{
+    max-width: 1200px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+#twoImage div{
+    width: 49%;
+    cursor: pointer;
+    
+}
+#twoImage div img{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    transition: .4s;
+    
+}
+#twoImage div img:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    transform: scale(1.01);
+    /* z-index: -1; */
+}
+
+/* Tab section start */
+
+#tabSec{
+    max-width: 1200px;
+    margin: 15px auto;
+    height: 530px;
+}
+#tabSec ul{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    position: relative;
+}
+#tabSec ul li{
+    /* border: 1px solid red; */
+    width: 14%;
+    padding: 10px;
+    color: #ca63a1;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 2px 0px;
+
+}
+
+
+#tabSec > ul > li #tabData{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    color: #666;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+#tabSec ul li:hover #tabData{
+    opacity: 1;
+    visibility: visible;
+ }
+#tabSec ul li:first-child #tabData{
+    opacity: 1;
+    visibility: visible;
+ }
+ #tabSec ul li:hover #tabSec ul li:first-child #tabData{
+    opacity: 0;
+    visibility: hidden;
+ }
+
+#tabSec > ul > li #tabData div{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    padding: 10px;
+    text-align: center;
+}
+#tabSec > ul > li #tabData div{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    padding: 10px;
+
+}
+#tabSec > ul > li #tabData > div > span{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    margin-bottom: -10px;
+}
+#tabSec > ul > li #tabData > div > span i{
+    font-size: 10px;
+    color: #d3b7ca;
+}
+#tabSec > ul > li #tabData > div > span p{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+}
+#tabSec > ul > li #tabData  button{
+    width: 50%;
+    font-size: 14px;
+    padding: 3px ;
+    border-radius: 3px;
+    border: none;
+    background-color: #DD0285;
+    color: white;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#tabSec > ul > li #tabData  button .bag{
+    display: inline-block;
+    font-size: 15px;
+    padding: 3px 10px;
+    color: white;
+}
+#tabSec > ul > li #tabData span .save{
+    display: inline-block;
+    width: 30px;
+    height: 23px;
+    margin: 0px 5px;
+    background-color: #DD0285;  
+    color: white;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+
+
+
+
+#tabSec ul li:hover{
+    background-color: #DD0285;
+    color: white;
+}
+#tabSec ul li:hover a{
+    color: white;
+}
+#tabSec ul li i, #tabSec ul li a{
+    padding: 5px 0 0;
+    align-items: center;
+    display: block;
+}
+
+#tabSec ul li i{
+    font-size: 35px;
+}
+#tabSec ul li:first-child ,#tabSec ul li:first-child > a{
+    background-color: #DD0285;
+    color: white;
+}
+
+#tabSec ul li a{
+    font-size: 15px;
+    padding:10px 0  5px;
+}
+
+
+
+
+
+
+
+/* Down Banner Image */
+#downImg{
+    width: 1200px;
+    margin: 15px auto;
+}
+
+
+/* view Product Section start */
+#viewProduct{
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+}
+
+#viewProduct > div > h4 { 
+    border-bottom: 3px solid #ca63a1;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+#viewProduct > div > img { 
+    width: 100%;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0.5px 0px 1px;
+}
+
+#wcmLater{
+    max-width: 1200px;
+    margin: 20px auto;
+    
+}
+#wcmLater > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+#wcmLater > div h2{
+    color: #DD0285;
+    font-weight: normal;
+}
+
+#wcmLater > div > div:last-child{
+    width: 35%;
+    height: 1px;
+    border: 1.2px solid #cfc1ca;
+}
+
+#wcmLater > .about_us_content {
+    display: block;
+    line-height: 1.66;
+    font-size: 14px;
+    color: #666666;
+    box-sizing: border-box;
+}
+#wcmLater > .about_us_content  a{
+    color: #666666;
+    text-decoration: none;
+}
+
+
