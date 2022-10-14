@@ -111,7 +111,27 @@ div > ul > li > i{
     font-size: 14px;
 }
 
-
+@media only screen and (max-width: 1200px) {
+    #futer > div{
+        max-width: 95%
+        
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #futer > div > div{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #futer > div > .fBottom {
+        display: block;
+    }
+    #futer > div > .fBottom h3{
+        font-size: 14px;
+    }
+  }
 
 
 

@@ -258,20 +258,6 @@
 
 
 
-
-
-
-
-/* Down Banner Image */
-/* #downImg{
-    width: 1200px;
-    margin: 15px auto;
-}
-#downImg img{
-    width: 100%;
-} */
-
-
 /* view Product Section start */
 #viewProduct{
     max-width: 1200px;
@@ -327,4 +313,82 @@
     text-decoration: none;
 }
 
+@media only screen and (max-width: 1200px)  {
+    #hotDeal{
+        max-width: 95%;
+        margin: 10px auto;
+    }
+    #tabSec{
+        width: 95%;
+    }
+    #viewProduct{
+        grid-template-columns: repeat(3, 1fr);
+        width: 95%;
+    }
+    #wcmLater{
+        width: 95%;
+        margin: auto;
+        
+    }
 
+}
+
+@media only screen and (max-width: 900px){
+    #banner .catagory{
+        display: none;
+    }
+    #banner .slider{
+        width: 100%;
+        text-align: center;
+    }
+    #tabSec{
+        max-width: 1200px;
+        margin: 15px auto;
+        height: 850px;
+    }
+    #tabSec > ul > li #tabData{
+        grid-template-columns: repeat(3,1fr);
+    }
+    #viewProduct{
+        width: 95%;
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+    #viewProduct > div:nth-child(3){
+        display: none;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 700px){
+    #tabSec > ul > li #tabData{
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+    #viewProduct > {
+        width: 95%;
+    }
+  }
+
+  @media only screen and (max-width: 500px){
+    #viewProduct{
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+    #viewProduct > div:nth-child(3){
+        display: block;
+    }
+    #wcmLater > .about_us_content {
+        display: none;
+    }
+    #wcmLater > div h2{
+        font-size: 16px;
+    }
+
+  }
+
+  
+
+  
