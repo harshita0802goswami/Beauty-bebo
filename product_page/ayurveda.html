@@ -706,6 +706,7 @@
   ];
 
   displayData(ayurvedaArr);
+  //SORTING
   function handleSorting() {
     var selectedVal = document.getElementById("sort").value;
     console.log(selectedVal);
@@ -733,6 +734,7 @@
     }
   }
 
+  ///DISPLAY
   displayData(ayurvedaArr);
   function displayData(data) {
     document.querySelector("#container").innerText = "";
@@ -801,6 +803,7 @@
         var exist = fragranceArrofObj.filter(function(el){
             return elem.name == el.name
         })
+        // console.log(typeof exist);
         if(exist.length>0){
           // var x=+elem.rate+ +45;
           // // console.log(price);

@@ -204,7 +204,7 @@ ul li a {
   display: inline-block;
 }
 #mainContainer {
-  width: 80%;
+  max-width: 1200px;
   margin: 40px auto;
   display: flex;
   justify-content: space-between;
