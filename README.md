@@ -12,10 +12,10 @@
 Javascript, HTML, CSS and Localstorage
 
 ## Team members 
-- [@Dinesh Sengar] (https://github.com/dinesh07sengar)
-- [@Prabhat Acharya] (https://github.com/PrabhatAcharya)
-- [@Tanmoy Mondal] (https://github.com/tanmoymandalofficial)
-- [@Harshita Goswami] (https://github.com/harshita0802goswami)
+- [Dinesh Sengar] (https://github.com/dinesh07sengar)
+- [Prabhat Acharya] (https://github.com/PrabhatAcharya)
+- [Tanmoy Mondal] (https://github.com/tanmoymandalofficial)
+- [Harshita Goswami] (https://github.com/harshita0802goswami)
 
 ## Website Snaps
 ![image](https://user-images.githubusercontent.com/68657465/195849836-fcddab53-fdad-4eed-89a9-edb5a2c5fbc1.png)
