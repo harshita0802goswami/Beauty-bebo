@@ -37,7 +37,7 @@
             <div>
                 <i class="fa-solid fa-heart"></i>
                 <i class="fa-solid fa-user"></i>
-                <span>My Account<i class="fa-solid fa-chevron-down"></i>
+                <span id="myacc">My Account<i class="fa-solid fa-chevron-down"></i>
                     <div>
                         <a href="login.html">Login</a>
                         <a href="signin.html">Register </a>
@@ -1174,6 +1174,16 @@
     cart.push(ele);
     localStorage.setItem("addcartArr",JSON.stringify(cart));
   }
+  var wlecomename=JSON.parse(localStorage.getItem("SignArr"));
+//   function displayName(){
+
+
+    if(wlecomename[0].Fname!=""){
+        document.getElementById("myacc").innerText= "Welcome " + wlecomename[0].Fname;
+        console.log(wlecomename[0].Fname);
+    }
+   
+//   } 
 </script>
 </html>
 
