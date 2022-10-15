@@ -25,3 +25,6 @@ Javascript, HTML, CSS and Localstorage
 ![image](https://user-images.githubusercontent.com/68657465/195850117-d0ff5b2b-e753-4dc6-b8f6-f114aab7146b.png)
 ![image](https://user-images.githubusercontent.com/68657465/195850300-07c4ba17-4264-4730-aaf5-624163b868da.png)
 ![image](https://user-images.githubusercontent.com/68657465/195850669-064cf1bd-6010-4a49-a46d-b008e3968fe3.png)
+
+## Deployed Link
+https://beauty-beboclone.netlify.app/product_page/personalcare
