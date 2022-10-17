@@ -3,13 +3,12 @@
 ## Features
 - Login/signup
 - Responsive Landing page
-- Adding and Removing the products to the wishList and to the Cart.
-- Removing the items from the Cart.
+- Adding and Removing the products from the Wishlist and Cart Page
 - Getting the total price and proceeding to the payment page.
 - Payment options and order confirmation.
 
 ## 🛠 Tech Stacks
-Javascript, HTML, CSS and Localstorage
+HTML , CSS , JavaScript and LocalStorage
 
 ## Team members 
 - [Dinesh Sengar] (https://github.com/dinesh07sengar)
