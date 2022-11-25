@@ -11,8 +11,8 @@
 HTML , CSS , JavaScript and LocalStorage
 
 ## Team members 
-- [Dinesh Sengar] (https://github.com/dinesh07sengar)
 - [Prabhat Acharya] (https://github.com/PrabhatAcharya)
+- [Dinesh Sengar] (https://github.com/dinesh07sengar)
 - [Tanmoy Mondal] (https://github.com/tanmoymandalofficial)
 - [Harshita Goswami] (https://github.com/harshita0802goswami)
 
